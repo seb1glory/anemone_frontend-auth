@@ -1,0 +1,182 @@
+:root {
+  --bg-main: #f5f4f0;            /* Мягкий тепло-серый/бежевый фон */
+  --card-bg: #ffffff;            /* Чисто белый фон карточки */
+  --text-primary: #1d1d1f;       /* Глубокий темный (Apple style) */
+  --text-secondary: #86868b;     /* Серый подтекст */
+  --border-color: #e5e5ea;       /* Тонкие границы */
+  --border-focus: #1d1d1f;       /* Акцент при фокусе */
+  --btn-bg: #1d1d1f;             /* Темная кнопка */
+  --btn-bg-hover: #333336;
+  --btn-disabled: #d1d1d6;
+  --error-color: #e53935;        /* Спокойный красный */
+  --success-color: #2e7d32;      /* Спокойный зеленый */
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-main);
+}
+
+/* Лейаут центрирования */
+.page-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Карточка формы (Apple Flat + Material карточка) */
+.form-container {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 380px;
+  padding: 36px 32px;
+  border-radius: 18px; /* Выраженные скругления Apple */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.form-container h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+/* Поля ввода */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: #fafafa;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+.field input:focus {
+  background-color: #ffffff;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.field input::placeholder {
+  color: #c7c7cc;
+}
+
+/* Сообщения об ошибках и успехе */
+.field-error {
+  font-size: 12px;
+  color: var(--error-color);
+  margin-top: 2px;
+}
+
+.error-message {
+  padding: 10px 12px;
+  background-color: #fdf2f2;
+  border: 1px solid #f8d7da;
+  border-radius: 8px;
+  color: var(--error-color);
+  font-size: 13px;
+}
+
+.success-message {
+  padding: 10px 12px;
+  background-color: #f2f8f2;
+  border: 1px solid #d4edda;
+  border-radius: 8px;
+  color: var(--success-color);
+  font-size: 13px;
+}
+
+/* Кнопка */
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.form-container button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--btn-bg-hover);
+}
+
+.form-container button[type="submit"]:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.form-container button[type="submit"]:disabled {
+  background-color: var(--btn-disabled);
+  cursor: not-allowed;
+}
+
+/* Блоки ссылок снизу формы */
+.form-links {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.form-links-space-between {
+  justify-content: space-between;
+}
+
+.form-links-center {
+  justify-content: center;
+}
+
+.text-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.text-link:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
